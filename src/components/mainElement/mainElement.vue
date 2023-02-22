@@ -12,7 +12,7 @@
           class="text-silver-reg w-[304px] h-[310px] rounded-full bg-dark-blue-reg"
         >
           <div class="m-[32%] flex jusfity-between flex-col items-center">
-            <h1 class="text-xl-reg">17:59</h1>
+            <h1 class="text-xl-reg">{{ time }}</h1>
             <p class="text-base-reg uppercase">pause</p>
           </div>
         </div>
@@ -23,6 +23,9 @@
 <script>
 export default {
   name: "mainElement",
+  props: {
+    time: String,
+  },
 };
 </script>
 <style>
