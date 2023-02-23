@@ -113,15 +113,15 @@
           <h1>Color</h1>
           <div id="themes" class="flex justify-between w-2/5 items-center">
             <div
-              @click="changeTheme('red')"
+              @click="changeTheme('red-reg')"
               class="red rounded-full w-[60px] h-[60px] font-bold text-dark-blue-reg p-4 bg-red-reg flex justify-center items-center"
             ></div>
             <div
-              @click="changeTheme('blue')"
+              @click="changeTheme('[#70F3F8]')"
               class="blue rounded-full w-[60px] h-[60px] font-bold text-dark-blue-reg p-4 bg-[#70F3F8] flex justify-center items-center"
             ></div>
             <div
-              @click="changeTheme('pink')"
+              @click="changeTheme('[#D881F8]')"
               class="pink rounded-full w-[60px] h-[60px] font-bold text-dark-blue-reg p-4 bg-[#D881F8] flex justify-center items-center"
             ></div>
           </div>
@@ -152,10 +152,7 @@ export default {
       shortBreakTime: "05:00",
       longBreakTime: "15:00",
       mainTime: this.pomodoroTime,
-      redColor: "red-reg",
-      blueColor: "[#70F3F8]",
-      pinkColor: "[#D881F8]",
-      mainColor: this.redColor,
+      mainColor: "red-reg",
     };
   },
   methods: {
@@ -190,20 +187,11 @@ export default {
       }
     },
     changeTheme(color) {
-      if (color == "red") {
-        this.mainColor = this.redColor;
-      }
-      if (color == "blue") {
-        this.mainColor = this.blueColor;
-      }
-      if (color == "pink") {
-        this.mainColor = this.pinkColor;
-      }
+      this.mainColor = color;
     },
   },
   mounted() {
     this.mainTime = this.pomodoroTime;
-    this.mainColor = this.redColor;
   },
 };
 </script>
